@@ -50,8 +50,6 @@ CR_CONFG_A305=exynos7885-a30v2_Q_defconfig
 CR_VARIANT_A305=A305
 CR_CONFG_A205=exynos7885-a20v2_Q_defconfig
 CR_VARIANT_A205=A205
-CR_CONFG_A105=exynos7885-a10v2_Q_defconfig
-CR_VARIANT_A105=A105
 CR_CONFG_A405=exynos7885-a40v2_Q_defconfig
 CR_VARIANT_A405=A405
 CR_CONFG_M205=exynos7885-m20v2_Q_defconfig
@@ -115,7 +113,7 @@ echo "----------------------------------------------"
 echo "$CR_NAME $CR_VERSION Build Script"
 echo "----------------------------------------------"
 PS3='Please select your option (1-x): '
-menuvar=("SM-A205" "SM-M305" "SM-A305" "SM-M205" "SM-A405" "SM-A105" "build_all_withouta105" "Exit")
+menuvar=("SM-A205" "SM-M305" "SM-A305" "SM-M205" "SM-A405" "SM-A105" "build_all" "Exit")
 select menuvar in "${menuvar[@]}"
 do
     case $menuvar in
@@ -228,7 +226,14 @@ do
              echo "$CR_VARIANT kernel build and coppy finished."
              
            
-	    break
+            echo "Starting $CR_VARIANT_A105 kernel build..."
+            CR_VARIANT=$CR_VARIANT_A105
+            CR_CONFG=$CR_CONFG_A105
+	    BUILD_ZIMAGE
+           # PACK_BOOT_IMG
+	    cp $CR_KERNEL /home/m/share/KERNEL/MinhKer_kernel_Q_a10_v14.6_pro/Image
+             echo "$CR_VARIANT kernel build and coppy finished."
+	    
             ;;
         "Exit")
             break
