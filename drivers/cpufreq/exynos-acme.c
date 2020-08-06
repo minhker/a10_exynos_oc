@@ -1114,8 +1114,7 @@ static __init int init_domain(struct exynos_cpufreq_domain *domain,
 
 	//minhker code
 	(domain->id==0)?(domain->max_freq = 1690000) : (domain->max_freq = 2184000);
-	domain->min_freq=208000;
-
+	(domain->id==1)?(domain->min_freq = 449000) : (domain->min_freq = 520000);
 
 	/* Initialize freq boost */
 	if (domain->boost_supported) {

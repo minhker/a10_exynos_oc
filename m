@@ -28,7 +28,7 @@ CR_RAMDISK=$CR_DIR/mk/Ramdisk
 # Compiled image name and location (Image/zImage)
 CR_KERNEL=$CR_DIR/arch/arm64/boot/Image
 # Kernel Name and Version
-CR_VERSION=V14.6_Pro
+CR_VERSION=V14.6_Pro_Gpu_Oc
 CR_NAME=MinhKer_Q
 # Thread count
 CR_JOBS=5
